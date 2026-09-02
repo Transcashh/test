@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#061c2b">
+<title>Sorevia Bank — Création de compte</title>
+
+<style>
+:root{--navy:#061c2b;--navy2:#092d40;--blue:#087ac2;--blue2:#075a87;--cyan:#62d9f5;--green:#18a66a;--red:#d34f4f;--text:#17313c;--muted:#71858e;--border:#dbe6ea;--bg:#f3f7f9;--white:#fff;--shadow:0 20px 60px #00182718}*{box-sizing:border-box}html,body{margin:0;padding:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--text)}body{min-height:100vh}.hidden{display:none!important}.page{min-height:100vh;display:flex;flex-direction:column}.header{height:72px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center}.headerInner{width:calc(100% - 30px);max-width:1050px;margin:auto;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:9px;color:var(--navy);text-decoration:none}.logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(145deg,#0aa3df,#07537c);color:#fff;display:grid;place-items:center;font:bold 25px Georgia}.brand strong{font:700 18px Georgia;display:block}.brand small{font-size:7px;letter-spacing:2px;color:#82959d}.loginLink{font-size:10px;font-weight:bold;color:var(--blue);text-decoration:none}.main{width:calc(100% - 20px);max-width:760px;margin:30px auto 80px}.hero{text-align:center;margin-bottom:25px}.eyebrow{font-size:9px;letter-spacing:2px;color:var(--blue);font-weight:bold}.hero h1{font:700 31px Georgia;margin:8px 0}.hero p{font-size:11px;color:var(--muted);margin:0;line-height:1.6}.card{background:#fff;border:1px solid var(--border);border-radius:22px;padding:25px;box-shadow:var(--shadow)}.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-bottom:25px}.step{height:7px;background:#e4ecef;border-radius:20px;overflow:hidden}.step.active{background:linear-gradient(90deg,var(--blue),var(--cyan))}.stepText{text-align:center;font-size:9px;color:var(--muted);margin:-16px 0 22px}.panel{display:none}.panel.active{display:block}.sectionHead{margin-bottom:20px}.sectionHead h2{font:700 23px Georgia;margin:5px 0}.sectionHead p{font-size:9px;color:var(--muted);margin:0;line-height:1.5}.grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{margin-bottom:13px}.field.full{grid-column:1/-1}.field label{display:block;font-size:9px;font-weight:bold;margin-bottom:7px}.input,.select,.textarea{width:100%;height:48px;border:1px solid var(--border);border-radius:10px;background:#fff;padding:0 12px;outline:none;color:var(--text);font-size:11px}.textarea{height:85px;padding:12px;resize:vertical}.input:focus,.select:focus,.textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px #087ac218}.field.bad .input,.field.bad .select,.field.bad .textarea{border-color:var(--red)}.hint{font-size:8px;color:var(--muted);margin-top:5px}.navButtons{display:flex;gap:9px;margin-top:20px}.btn{height:48px;border-radius:10px;font-size:10px;font-weight:bold;cursor:pointer}.primary{border:0;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;flex:1}.secondary{border:1px solid var(--border);background:#fff;color:#607780;padding:0 20px}.primary:disabled{opacity:.7;cursor:not-allowed}.notice{background:#eef8fb;border:1px solid #d1ebf1;border-radius:12px;padding:13px;margin-bottom:17px;font-size:9px;line-height:1.5}.countryInfo{display:flex;gap:10px;align-items:center;background:#f5fafc;border:1px solid var(--border);border-radius:10px;padding:11px;margin-top:3px}.countryFlag{font-size:23px}.countryInfo strong{display:block;font-size:10px}.countryInfo span{display:block;font-size:8px;color:var(--muted);margin-top:3px}.camera{background:#fff;border:1px solid var(--border);border-radius:12px;padding:13px}.camera label{display:block;font-size:9px;font-weight:bold;margin-bottom:7px;color:var(--text)}.camera input{width:100%;font-size:11px;color:var(--text);background:#fff;border:0;padding:0}.passwordBox{position:relative}.togglePass{position:absolute;right:10px;top:35px;border:0;background:none;color:var(--blue);font-size:9px;cursor:pointer}.check{display:flex;gap:8px;align-items:flex-start;margin:11px 0;font-size:9px;color:#536b74;line-height:1.5}.check input{margin-top:2px}.success{display:none;text-align:center;padding:25px}.successIcon{width:62px;height:62px;border-radius:18px;background:#e9f8f1;color:var(--green);display:grid;place-items:center;font-size:28px;margin:0 auto 15px}.success h2{font:700 23px Georgia;margin:0 0 8px}.success p{font-size:10px;color:var(--muted);line-height:1.6}.loader{display:inline-block;width:13px;height:13px;border:2px solid #ffffff55;border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;vertical-align:-2px;margin-right:6px}@keyframes spin{to{transform:rotate(360deg)}}.footer{text-align:center;color:#8ca2aa;font-size:8px;padding:20px}.footer strong{display:block;color:#087ac2;font:700 11px Georgia;margin-bottom:5px}@media(max-width:600px){.main{margin-top:18px}.card{padding:17px;border-radius:17px}.grid{grid-template-columns:1fr}.field.full{grid-column:auto}.hero h1{font-size:25px}.steps{gap:4px}.loginLink{font-size:9px}.navButtons{position:relative}.secondary{padding:0 14px}}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<header class="header">
+<div class="headerInner">
+<a class="brand" href="index.html">
+<span class="logo">S</span>
+<span><strong>Sorevia Bank</strong><small>DIGITAL BANKING</small></span>
+</a>
+<a class="loginLink" href="connecter.html">Déjà client ? Se connecter</a>
+</div>
+</header>
+
+<main class="main">
+
+<div class="hero">
+<span class="eyebrow">SOREVIA BANK</span>
+<h1>Créer votre compte</h1>
+<p>Complétez les informations ci-dessous pour ouvrir votre espace bancaire.</p>
+</div>
+
+<div class="card">
+
+<div class="steps">
+<div class="step active" id="bar1"></div>
+<div class="step" id="bar2"></div>
+<div class="step" id="bar3"></div>
+<div class="step" id="bar4"></div>
+<div class="step" id="bar5"></div>
+</div>
+
+<div class="stepText" id="stepText">Étape 1 sur 5 — Informations personnelles</div>
+
+<section class="panel active" id="step1">
+
+<div class="sectionHead">
+<span class="eyebrow">ÉTAPE 1</span>
+<h2>Informations personnelles</h2>
+<p>Renseignez votre identité exactement comme elle apparaît sur votre document officiel.</p>
+</div>
+
+<div class="grid">
+
+<div class="field" id="nomBox">
+<label for="nom">Nom *</label>
+<input class="input" id="nom" type="text" autocomplete="family-name" placeholder="Votre nom">
+</div>
+
+<div class="field" id="prenomBox">
+<label for="prenom">Prénom *</label>
+<input class="input" id="prenom" type="text" autocomplete="given-name" placeholder="Votre prénom">
+</div>
+
+<div class="field" id="dateBox">
+<label for="dateNaissance">Date de naissance *</label>
+<input class="input" id="dateNaissance" type="date">
+</div>
+
+<div class="field" id="sexeBox">
+<label for="sexe">Sexe *</label>
+<select class="select" id="sexe">
+<option value="">Choisir</option>
+<option value="Masculin">Masculin</option>
+<option value="Féminin">Féminin</option>
+<option value="Autre">Autre</option>
+</select>
+</div>
+
+<div class="field full" id="nationaliteBox">
+<label for="nationalite">Nationalité *</label>
+<input class="input" id="nationalite" type="text" placeholder="Votre nationalité">
+</div>
+
+</div>
+
+<div class="navButtons">
+<button class="primary btn" id="continue1" type="button">Continuer →</button>
+</div>
+
+</section>
+
+<section class="panel" id="step2">
+
+<div class="sectionHead">
+<span class="eyebrow">ÉTAPE 2</span>
+<h2>Coordonnées et résidence</h2>
+<p>Indiquez vos coordonnées et votre pays de résidence.</p>
+</div>
+
+<div class="grid">
+
+<div class="field" id="emailBox">
+<label for="email">Adresse e-mail *</label>
+<input class="input" id="email" type="email" autocomplete="email" placeholder="email@exemple.com">
+</div>
+
+<div class="field" id="telephoneBox">
+<label for="telephone">Téléphone *</label>
+<input class="input" id="telephone" type="tel" autocomplete="tel" placeholder="+33 7........... 66">
+</div>
+
+<div class="field" id="continentBox">
+<label for="continent">Continent *</label>
+<select class="select" id="continent">
+<option value="">Choisir un continent</option>
+<option value="Afrique">Afrique</option>
+<option value="Amérique">Amérique</option>
+<option value="Asie">Asie</option>
+<option value="Europe">Europe</option>
+<option value="Océanie">Océanie</option>
+</select>
+</div>
+
+<div class="field" id="paysBox">
+<label for="pays">Pays *</label>
+<select class="select" id="pays">
+<option value="">Choisir un pays</option>
+</select>
+</div>
+
+<div class="field" id="deviseBox">
+<label for="devise">Devise *</label>
+<select class="select" id="devise">
+<option value="">Choisir une devise</option>
+</select>
+</div>
+
+<div class="field" id="villeBox">
+<label for="ville">Ville *</label>
+<input class="input" id="ville" type="text" placeholder="Votre ville">
+</div>
+
+<div class="field full" id="adresseBox">
+<label for="adresse">Adresse complète *</label>
+<textarea class="textarea" id="adresse" placeholder="Votre adresse"></textarea>
+</div>
+
+</div>
+
+<div class="countryInfo">
+<div class="countryFlag" id="countryFlag">🌍</div>
+<div>
+<strong id="countryName">Pays non sélectionné</strong>
+<span id="countryCurrency">Sélectionnez votre pays pour afficher sa devise.</span>
+</div>
+</div>
+
+<div class="navButtons">
+<button class="secondary btn" id="back2" type="button">← Retour</button>
+<button class="primary btn" id="continue2" type="button">Continuer →</button>
+</div>
+
+</section>
+
+<section class="panel" id="step3">
+
+<div class="sectionHead">
+<span class="eyebrow">ÉTAPE 3</span>
+<h2>Situation professionnelle</h2>
+<p>Ces informations permettent de compléter votre profil bancaire.</p>
+</div>
+
+<div class="grid">
+
+<div class="field full" id="professionBox">
+<label for="profession">Profession *</label>
+<input class="input" id="profession" type="text" placeholder="Votre profession">
+</div>
+
+<div class="field full" id="revenusBox">
+<label for="revenus">Revenus mensuels *</label>
+<input class="input" id="revenus" type="number" min="0" step="1" placeholder="Montant">
+<div class="hint">Saisissez uniquement le montant numérique.</div>
+</div>
+
+</div>
+
+<div class="notice">
+<strong>Protection de vos informations</strong><br>
+Les informations saisies sont associées à votre compte utilisateur Firebase.
+</div>
+
+<div class="navButtons">
+<button class="secondary btn" id="back3" type="button">← Retour</button>
+<button class="primary btn" id="continue3" type="button">Continuer →</button>
+</div>
+
+</section>
+
+<script>
+
+const COUNTRIES=[
+["Afghanistan","Asie","AF","AFN"],["Albanie","Europe","AL","ALL"],["Algérie","Afrique","DZ","DZD"],["Andorre","Europe","AD","EUR"],["Angola","Afrique","AO","AOA"],["Antigua-et-Barbuda","Amérique","AG","XCD"],["Argentine","Amérique","AR","ARS"],["Arménie","Asie","AM","AMD"],["Australie","Océanie","AU","AUD"],["Autriche","Europe","AT","EUR"],["Azerbaïdjan","Asie","AZ","AZN"],["Bahamas","Amérique","BS","BSD"],["Bahreïn","Asie","BH","BHD"],["Bangladesh","Asie","BD","BDT"],["Barbade","Amérique","BB","BBD"],["Biélorussie","Europe","BY","BYN"],["Belgique","Europe","BE","EUR"],["Belize","Amérique","BZ","BZD"],["Bénin","Afrique","BJ","XOF"],["Bhoutan","Asie","BT","BTN"],["Bolivie","Amérique","BO","BOB"],["Bosnie-Herzégovine","Europe","BA","BAM"],["Botswana","Afrique","BW","BWP"],["Brésil","Amérique","BR","BRL"],["Brunei","Asie","BN","BND"],["Bulgarie","Europe","BG","BGN"],["Burkina Faso","Afrique","BF","XOF"],["Burundi","Afrique","BI","BIF"],["Cabo Verde","Afrique","CV","CVE"],["Cambodge","Asie","KH","KHR"],["Cameroun","Afrique","CM","XAF"],["Canada","Amérique","CA","CAD"],["République centrafricaine","Afrique","CF","XAF"],["Tchad","Afrique","TD","XAF"],["Chili","Amérique","CL","CLP"],["Chine","Asie","CN","CNY"],["Colombie","Amérique","CO","COP"],["Comores","Afrique","KM","KMF"],["République du Congo","Afrique","CG","XAF"],["République démocratique du Congo","Afrique","CD","CDF"],["Costa Rica","Amérique","CR","CRC"],["Côte d’Ivoire","Afrique","CI","XOF"],["Croatie","Europe","HR","EUR"],["Cuba","Amérique","CU","CUP"],["Chypre","Europe","CY","EUR"],["Tchéquie","Europe","CZ","CZK"],["Danemark","Europe","DK","DKK"],["Djibouti","Afrique","DJ","DJF"],["Dominique","Amérique","DM","XCD"],["République dominicaine","Amérique","DO","DOP"],["Équateur","Amérique","EC","USD"],["Égypte","Afrique","EG","EGP"],["El Salvador","Amérique","SV","USD"],["Guinée équatoriale","Afrique","GQ","XAF"],["Érythrée","Afrique","ER","ERN"],["Estonie","Europe","EE","EUR"],["Eswatini","Afrique","SZ","SZL"],["Éthiopie","Afrique","ET","ETB"],["Fidji","Océanie","FJ","FJD"],["Finlande","Europe","FI","EUR"],["France","Europe","FR","EUR"],["Gabon","Afrique","GA","XAF"],["Gambie","Afrique","GM","GMD"],["Géorgie","Asie","GE","GEL"],["Allemagne","Europe","DE","EUR"],["Ghana","Afrique","GH","GHS"],["Grèce","Europe","GR","EUR"],["Grenade","Amérique","GD","XCD"],["Guatemala","Amérique","GT","GTQ"],["Guinée","Afrique","GN","GNF"],["Guinée-Bissau","Afrique","GW","XOF"],["Guyana","Amérique","GY","GYD"],["Haïti","Amérique","HT","HTG"],["Honduras","Amérique","HN","HNL"],["Hongrie","Europe","HU","HUF"],["Islande","Europe","IS","ISK"],["Inde","Asie","IN","INR"],["Indonésie","Asie","ID","IDR"],["Iran","Asie","IR","IRR"],["Irak","Asie","IQ","IQD"],["Irlande","Europe","IE","EUR"],["Israël","Asie","IL","ILS"],["Italie","Europe","IT","EUR"],["Jamaïque","Amérique","JM","JMD"],["Japon","Asie","JP","JPY"],["Jordanie","Asie","JO","JOD"],["Kazakhstan","Asie","KZ","KZT"],["Kenya","Afrique","KE","KES"],["Kiribati","Océanie","KI","AUD"],["Koweït","Asie","KW","KWD"],["Kirghizistan","Asie","KG","KGS"],["Laos","Asie","LA","LAK"],["Lettonie","Europe","LV","EUR"],["Liban","Asie","LB","LBP"],["Lesotho","Afrique","LS","LSL"],["Libéria","Afrique","LR","LRD"],["Libye","Afrique","LY","LYD"],["Liechtenstein","Europe","LI","CHF"],["Lituanie","Europe","LT","EUR"],["Luxembourg","Europe","LU","EUR"],["Madagascar","Afrique","MG","MGA"],["Malawi","Afrique","MW","MWK"],["Malaisie","Asie","MY","MYR"],["Maldives","Asie","MV","MVR"],["Mali","Afrique","ML","XOF"],["Malte","Europe","MT","EUR"],["Îles Marshall","Océanie","MH","USD"],["Mauritanie","Afrique","MR","MRU"],["Maurice","Afrique","MU","MUR"],["Mexique","Amérique","MX","MXN"],["Micronésie","Océanie","FM","USD"],["Moldavie","Europe","MD","MDL"],["Monaco","Europe","MC","EUR"],["Mongolie","Asie","MN","MNT"],["Monténégro","Europe","ME","EUR"],["Maroc","Afrique","MA","MAD"],["Mozambique","Afrique","MZ","MZN"],["Myanmar","Asie","MM","MMK"],["Namibie","Afrique","NA","NAD"],["Nauru","Océanie","NR","AUD"],["Népal","Asie","NP","NPR"],["Pays-Bas","Europe","NL","EUR"],["Nouvelle-Zélande","Océanie","NZ","NZD"],["Nicaragua","Amérique","NI","NIO"],["Niger","Afrique","NE","XOF"],["Nigeria","Afrique","NG","NGN"],["Corée du Nord","Asie","KP","KPW"],["Macédoine du Nord","Europe","MK","MKD"],["Norvège","Europe","NO","NOK"],["Oman","Asie","OM","OMR"],["Pakistan","Asie","PK","PKR"],["Palaos","Océanie","PW","USD"],["Panama","Amérique","PA","PAB"],["Papouasie-Nouvelle-Guinée","Océanie","PG","PGK"],["Paraguay","Amérique","PY","PYG"],["Pérou","Amérique","PE","PEN"],["Philippines","Asie","PH","PHP"],["Pologne","Europe","PL","PLN"],["Portugal","Europe","PT","EUR"],["Qatar","Asie","QA","QAR"],["Roumanie","Europe","RO","RON"],["Russie","Europe","RU","RUB"],["Rwanda","Afrique","RW","RWF"],["Saint-Christophe-et-Niévès","Amérique","KN","XCD"],["Sainte-Lucie","Amérique","LC","XCD"],["Saint-Vincent-et-les-Grenadines","Amérique","VC","XCD"],["Samoa","Océanie","WS","WST"],["Saint-Marin","Europe","SM","EUR"],["São Tomé-et-Príncipe","Afrique","ST","STN"],["Arabie saoudite","Asie","SA","SAR"],["Sénégal","Afrique","SN","XOF"],["Serbie","Europe","RS","RSD"],["Seychelles","Afrique","SC","SCR"],["Sierra Leone","Afrique","SL","SLE"],["Singapour","Asie","SG","SGD"],["Slovaquie","Europe","SK","EUR"],["Slovénie","Europe","SI","EUR"],["Îles Salomon","Océanie","SB","SBD"],["Somalie","Afrique","SO","SOS"],["Afrique du Sud","Afrique","ZA","ZAR"],["Corée du Sud","Asie","KR","KRW"],["Soudan du Sud","Afrique","SS","SSP"],["Espagne","Europe","ES","EUR"],["Sri Lanka","Asie","LK","LKR"],["Soudan","Afrique","SD","SDG"],["Suriname","Amérique","SR","SRD"],["Suède","Europe","SE","SEK"],["Suisse","Europe","CH","CHF"],["Syrie","Asie","SY","SYP"],["Taïwan","Asie","TW","TWD"],["Tadjikistan","Asie","TJ","TJS"],["Tanzanie","Afrique","TZ","TZS"],["Thaïlande","Asie","TH","THB"],["Timor oriental","Asie","TL","USD"],["Togo","Afrique","TG","XOF"],["Tonga","Océanie","TO","TOP"],["Trinité-et-Tobago","Amérique","TT","TTD"],["Tunisie","Afrique","TN","TND"],["Turquie","Asie","TR","TRY"],["Turkménistan","Asie","TM","TMT"],["Tuvalu","Océanie","TV","AUD"],["Ouganda","Afrique","UG","UGX"],["Ukraine","Europe","UA","UAH"],["Émirats arabes unis","Asie","AE","AED"],["Royaume-Uni","Europe","GB","GBP"],["États-Unis","Amérique","US","USD"],["Uruguay","Amérique","UY","UYU"],["Ouzbékistan","Asie","UZ","UZS"],["Vanuatu","Océanie","VU","VUV"],["Vatican","Europe","VA","EUR"],["Venezuela","Amérique","VE","VES"],["Vietnam","Asie","VN","VND"],["Yémen","Asie","YE","YER"],["Zambie","Afrique","ZM","ZMW"],["Zimbabwe","Afrique","ZW","ZWG"]
+];
+
+const currencyNames={
+XOF:"Franc CFA BCEAO",XAF:"Franc CFA BEAC",EUR:"Euro",USD:"Dollar américain",GBP:"Livre sterling",CAD:"Dollar canadien",AUD:"Dollar australien",CHF:"Franc suisse",NGN:"Naira nigérian",GHS:"Cedi ghanéen",MAD:"Dirham marocain",DZD:"Dinar algérien",TND:"Dinar tunisien",KES:"Shilling kényan",ZAR:"Rand sud-africain",EGP:"Livre égyptienne",INR:"Roupie indienne",CNY:"Yuan chinois",JPY:"Yen japonais",KRW:"Won sud-coréen",AED:"Dirham des Émirats arabes unis",SAR:"Riyal saoudien",BRL:"Réal brésilien",MXN:"Peso mexicain",ARS:"Peso argentin",CLP:"Peso chilien",COP:"Peso colombien",PEN:"Sol péruvien",XCD:"Dollar des Caraïbes orientales",XPF:"Franc CFP",NZD:"Dollar néo-zélandais",SGD:"Dollar de Singapour",HKD:"Dollar de Hong Kong",TRY:"Livre turque",RUB:"Rouble russe",UAH:"Hryvnia ukrainienne",PLN:"Zloty polonais",SEK:"Couronne suédoise",NOK:"Couronne norvégienne",DKK:"Couronne danoise",ISK:"Couronne islandaise",CZK:"Couronne tchèque",HUF:"Forint hongrois",RON:"Leu roumain",BGN:"Lev bulgare",RSD:"Dinar serbe",BAM:"Mark convertible",MKD:"Denar macédonien",GEL:"Lari géorgien",KZT:"Tenge kazakh",THB:"Baht thaïlandais",MYR:"Ringgit malaisien",IDR:"Roupie indonésienne",PHP:"Peso philippin",VND:"Dong vietnamien",PKR:"Roupie pakistanaise",BDT:"Taka bangladais",NPR:"Roupie népalaise",LKR:"Roupie sri-lankaise",ETB:"Birr éthiopien",TZS:"Shilling tanzanien",UGX:"Shilling ougandais",RWF:"Franc rwandais",BWP:"Pula botswanais",ZMW:"Kwacha zambien",MZN:"Metical mozambicain",MUR:"Roupie mauricienne",SCR:"Roupie seychelloise",CDF:"Franc congolais",GNF:"Franc guinéen",GMD:"Dalasi gambien",SLE:"Leone sierra-léonais",LRD:"Dollar libérien",SLL:"Leone",HTG:"Gourde haïtienne",DOP:"Peso dominicain",GTQ:"Quetzal guatémaltèque",HNL:"Lempira hondurien",NIO:"Córdoba nicaraguayen",CRC:"Colón costaricien",PAB:"Balboa panaméen",PYG:"Guarani paraguayen",BOB:"Boliviano",UYU:"Peso uruguayen",JMD:"Dollar jamaïcain",TTD:"Dollar de Trinité-et-Tobago",BSD:"Dollar bahaméen",BBD:"Dollar barbadien",GYD:"Dollar guyanien",SRD:"Dollar surinamais",FJD:"Dollar fidjien",PGK:"Kina papouan",SBD:"Dollar des Salomon",TOP:"Pa'anga tongien",WST:"Tala samoan",VUV:"Vatu vanuatais",KWD:"Dinar koweïtien",BHD:"Dinar bahreïni",OMR:"Rial omanais",QAR:"Rial qatari",JOD:"Dinar jordanien",ILS:"Nouveau shekel israélien",IRR:"Rial iranien",IQD:"Dinar irakien",LBP:"Livre libanaise",YER:"Rial yéménite",AFN:"Afghani",ALL:"Lek albanais",AMD:"Dram arménien",AZN:"Manat azerbaïdjanais",BYN:"Rouble biélorusse",MDL:"Leu moldave",MNT:"Tugrik mongol",TJS:"Somoni tadjik",TMT:"Manat turkmène",UZS:"Sum ouzbek",KGS:"Som kirghize",LAK:"Kip laotien",KHR:"Riel cambodgien",MMK:"Kyat birman",BTN:"Ngultrum bhoutanais",MVR:"Rufiyaa maldivienne",BND:"Dollar de Brunei",NAD:"Dollar namibien",SZL:"Lilangeni",LSL:"Loti",MWK:"Kwacha malawite",BIF:"Franc burundais",DJF:"Franc djiboutien",KMF:"Franc comorien",ERN:"Nakfa érythréen",SSP:"Livre sud-soudanaise",SDG:"Livre soudanaise",LYD:"Dinar libyen",MRU:"Ouguiya mauritanien",CVE:"Escudo cap-verdien",AOA:"Kwanza angolais",MGA:"Ariary malgache",STN:"Dobra santoméen",CUP:"Peso cubain",BZD:"Dollar bélizien",GIP:"Livre de Gibraltar",ISK:"Couronne islandaise",BAM:"Mark convertible"
+};
+
+const countrySelect=document.getElementById("pays");
+COUNTRIES.sort((a,b)=>a[0].localeCompare(b[0],"fr")).forEach(c=>{
+const o=document.createElement("option");
+o.value=c[0];
+o.textContent=c[0];
+o.dataset.continent=c[1];
+o.dataset.iso=c[2];
+o.dataset.currency=c[3];
+countrySelect.appendChild(o);
+});
+
+document.getElementById("continent").addEventListener("change",function(){
+const continent=this.value;
+[...countrySelect.options].forEach(o=>{
+if(!o.value)return;
+o.hidden=continent&&o.dataset.continent!==continent;
+});
+countrySelect.value="";
+document.getElementById("devise").innerHTML='<option value="">Choisir une devise</option>';
+});
+
+countrySelect.addEventListener("change",function(){
+const o=this.options[this.selectedIndex];
+const code=o.dataset.currency||"";
+const name=currencyNames[code]||code;
+document.getElementById("countryFlag").textContent="🌍";
+document.getElementById("countryName").textContent=o.value||"Pays non sélectionné";
+document.getElementById("countryCurrency").textContent=o.value?name+" ("+code+")":"Sélectionnez votre pays.";
+const d=document.getElementById("devise");
+d.innerHTML="";
+const opt=document.createElement("option");
+opt.value=code;
+opt.textContent=name+" ("+code+")";
+d.appendChild(opt);
+});
+</script>
+
+<section class="panel" id="step4">
+
+<div class="sectionHead">
+<span class="eyebrow">ÉTAPE 4</span>
+<h2>Vérification d'identité</h2>
+<p>Ajoutez les informations de votre pièce d'identité et prenez votre selfie.</p>
+</div>
+
+<div class="grid">
+
+<div class="field" id="documentTypeBox">
+<label for="documentType">Type de document *</label>
+<select class="select" id="documentType">
+<option value="">Choisir</option>
+<option value="Carte nationale d'identité">Carte nationale d'identité</option>
+<option value="Passeport">Passeport</option>
+<option value="Carte de séjour">Carte de séjour</option>
+<option value="Permis de conduire">Permis de conduire</option>
+</select>
+</div>
+
+<div class="field" id="documentNumberBox">
+<label for="documentNumber">Numéro du document *</label>
+<input class="input" id="documentNumber" type="text" placeholder="Numéro du document">
+</div>
+
+<div class="field full" id="expirationBox">
+<label for="expiration">Date d'expiration *</label>
+<input class="input" id="expiration" type="date">
+</div>
+
+</div>
+
+<div class="notice">
+<strong>Vérification de sécurité</strong><br>
+Votre selfie est uniquement utilisé comme élément de vérification associé à votre inscription.
+</div>
+
+<div class="camera">
+<label for="photo">Prendre une photo selfie de votre visage</label>
+<input type="file" id="photo" accept="image/*">
+</div>
+
+<div class="navButtons">
+<button class="secondary btn" id="back4" type="button">← Retour</button>
+<button class="primary btn" id="continue4" type="button">Continuer →</button>
+</div>
+
+</section>
+
+<section class="panel" id="step5">
+
+<div class="sectionHead">
+<span class="eyebrow">ÉTAPE 5</span>
+<h2>Sécurisez votre compte</h2>
+<p>Créez le mot de passe qui sera utilisé pour accéder à votre espace.</p>
+</div>
+
+<div class="notice">
+<strong>Votre sécurité</strong><br>
+Utilisez au minimum 6 caractères. Nous vous recommandons une combinaison de lettres, chiffres et symboles.
+</div>
+
+<div class="field passwordBox" id="passwordBox">
+<label for="password">Mot de passe *</label>
+<input class="input" id="password" type="password" autocomplete="new-password" placeholder="Votre mot de passe">
+<button class="togglePass" type="button" id="togglePassword">Afficher</button>
+</div>
+
+<div class="field passwordBox" id="confirmBox">
+<label for="confirmPassword">Confirmer le mot de passe *</label>
+<input class="input" id="confirmPassword" type="password" autocomplete="new-password" placeholder="Confirmez votre mot de passe">
+<button class="togglePass" type="button" id="toggleConfirm">Afficher</button>
+</div>
+
+<label class="check" id="acceptBox">
+<input type="checkbox" id="accept">
+<span>J'accepte les conditions générales d'utilisation de Sorevia Bank.</span>
+</label>
+
+<label class="check" id="certifyBox">
+<input type="checkbox" id="certify">
+<span>Je certifie que les informations fournies sont exactes.</span>
+</label>
+
+<div class="navButtons">
+<button class="secondary btn" id="back5" type="button">← Retour</button>
+<button class="primary btn" id="createAccount" type="button">Créer mon compte ✓</button>
+</div>
+
+</section>
+
+<div class="success" id="successBox">
+
+<div class="successIcon">✓</div>
+
+<h2>Compte créé avec succès</h2>
+
+<p>
+Votre compte Sorevia Bank a été créé avec succès.
+<br>
+Vous pouvez maintenant accéder à votre espace.
+</p>
+
+</div>
+
+</div>
+
+</main>
+
+<footer class="footer">
+<strong>Sorevia Bank</strong>
+© 2026 — Plateforme bancaire numérique
+</footer>
+
+</div>
+
+<script type="module">
+
+import{initializeApp}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import{getAuth,createUserWithEmailAndPassword}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import{getFirestore,doc,setDoc,serverTimestamp}from"https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig={
+apiKey:"AIzaSyA_iq7zGnD4100DM06D9sXgMjbCwfqq3JU",
+authDomain:"sorevia-bank.firebaseapp.com",
+projectId:"sorevia-bank",
+storageBucket:"sorevia-bank.firebasestorage.app",
+messagingSenderId:"729316261396",
+appId:"1:729316261396:web:bfeebed60e968c65433101",
+measurementId:"G-HF074LQR8Y"
+};
+
+const appFirebase=initializeApp(firebaseConfig);
+const auth=getAuth(appFirebase);
+const db=getFirestore(appFirebase);
+
+const $=id=>document.getElementById(id);
+
+let currentStep=1;
+let selfieData="";
+
+function showStep(n){
+
+currentStep=n;
+
+document.querySelectorAll(".panel").forEach(x=>x.classList.remove("active"));
+
+$("step"+n).classList.add("active");
+
+for(let i=1;i<=5;i++){
+$("bar"+i).classList.toggle("active",i<=n);
+}
+
+const names={
+1:"Informations personnelles",
+2:"Coordonnées et résidence",
+3:"Situation professionnelle",
+4:"Vérification d'identité",
+5:"Sécurité du compte"
+};
+
+$("stepText").textContent="Étape "+n+" sur 5 — "+names[n];
+
+window.scrollTo({top:0,behavior:"smooth"});
+
+}
+
+function value(id){
+return $(id).value.trim();
+}
+
+function bad(id,state){
+$(id).classList.toggle("bad",state);
+}
+
+function check1(){
+
+let ok=true;
+
+const fields=[
+["nomBox","nom"],
+["prenomBox","prenom"],
+["dateBox","dateNaissance"],
+["nationaliteBox","nationalite"],
+["sexeBox","sexe"]
+];
+
+fields.forEach(([box,id])=>{
+const invalid=!value(id);
+bad(box,invalid);
+if(invalid)ok=false;
+});
+
+return ok;
+}
+
+function check2(){
+
+let ok=true;
+
+const fields=[
+["emailBox","email"],
+["telephoneBox","telephone"],
+["continentBox","continent"],
+["paysBox","pays"],
+["deviseBox","devise"],
+["villeBox","ville"],
+["adresseBox","adresse"]
+];
+
+fields.forEach(([box,id])=>{
+const invalid=!value(id);
+bad(box,invalid);
+if(invalid)ok=false;
+});
+
+return ok;
+}
+
+function check3(){
+
+let ok=true;
+
+const fields=[
+["professionBox","profession"],
+["revenusBox","revenus"]
+];
+
+fields.forEach(([box,id])=>{
+const invalid=!value(id);
+bad(box,invalid);
+if(invalid)ok=false;
+});
+
+return ok;
+}
+
+function check4(){
+
+let ok=true;
+
+const fields=[
+["documentTypeBox","documentType"],
+["documentNumberBox","documentNumber"],
+["expirationBox","expiration"]
+];
+
+fields.forEach(([box,id])=>{
+const invalid=!value(id);
+bad(box,invalid);
+if(invalid)ok=false;
+});
+
+if(!$("photo").files||$("photo").files.length===0||!selfieData){
+
+alert("Veuillez sélectionner votre photo selfie avant de continuer.");
+ok=false;
+
+}
+
+return ok;
+}
+
+/* NAVIGATION */
+
+$("continue1").onclick=()=>{
+
+if(check1()){
+showStep(2);
+}else{
+alert("Veuillez remplir tous les champs obligatoires.");
+}
+
+};
+
+$("continue2").onclick=()=>{
+
+if(check2()){
+showStep(3);
+}else{
+alert("Veuillez remplir tous les champs obligatoires.");
+}
+
+};
+
+$("continue3").onclick=()=>{
+
+if(check3()){
+showStep(4);
+}else{
+alert("Veuillez remplir tous les champs obligatoires.");
+}
+
+};
+
+$("continue4").onclick=()=>{
+
+if(check4()){
+showStep(5);
+}
+
+};
+
+$("back2").onclick=()=>showStep(1);
+$("back3").onclick=()=>showStep(2);
+$("back4").onclick=()=>showStep(3);
+$("back5").onclick=()=>showStep(4);
+
+
+/* MOT DE PASSE */
+
+$("togglePassword").onclick=()=>{
+
+const input=$("password");
+
+if(input.type==="password"){
+input.type="text";
+$("togglePassword").textContent="Masquer";
+}else{
+input.type="password";
+$("togglePassword").textContent="Afficher";
+}
+
+};
+
+$("toggleConfirm").onclick=()=>{
+
+const input=$("confirmPassword");
+
+if(input.type==="password"){
+input.type="text";
+$("toggleConfirm").textContent="Masquer";
+}else{
+input.type="password";
+$("toggleConfirm").textContent="Afficher";
+}
+
+};
+
+
+/* SELFIE */
+
+$("photo").addEventListener("change",function(){
+
+const file=this.files&&this.files[0];
+
+if(!file){
+selfieData="";
+return;
+}
+
+if(!file.type.startsWith("image/")){
+this.value="";
+selfieData="";
+alert("Veuillez sélectionner une image.");
+return;
+}
+
+const reader=new FileReader();
+
+reader.onload=function(){
+selfieData=reader.result;
+};
+
+reader.onerror=function(){
+selfieData="";
+alert("Impossible de lire la photo sélectionnée.");
+};
+
+reader.readAsDataURL(file);
+
+});
+
+
+/* CREATION FIREBASE */
+
+$("createAccount").onclick=async()=>{
+
+let pass=value("password");
+let confirm=value("confirmPassword");
+
+bad("passwordBox",pass.length<6);
+bad("confirmBox",!confirm||pass!==confirm);
+bad("acceptBox",!$("accept").checked);
+bad("certifyBox",!$("certify").checked);
+
+if(pass.length<6){
+
+alert("Le mot de passe doit contenir au moins 6 caractères.");
+return;
+
+}
+
+if(!confirm||pass!==confirm){
+
+alert("Les deux mots de passe ne correspondent pas.");
+return;
+
+}
+
+if(!$("accept").checked){
+
+alert("Vous devez accepter les conditions générales.");
+return;
+
+}
+
+if(!$("certify").checked){
+
+alert("Vous devez certifier l'exactitude des informations.");
+return;
+
+}
+
+const button=$("createAccount");
+
+button.disabled=true;
+button.innerHTML='<span class="loader"></span> Création...';
+
+try{
+
+const email=value("email");
+
+const userCredential=await createUserWithEmailAndPassword(
+auth,
+email,
+pass
+);
+
+const user=userCredential.user;
+
+
+/* NUMERO DE COMPTE */
+
+const accountNumber=Array.from({length:16},()=>Math.floor(Math.random()*10)).join("");
+
+
+/* DONNEES DU CLIENT */
+
+const account={
+
+card:{
+  number:accountNumber,
+  holder:(value("prenom")+" "+value("nom")).trim(),
+  expiry:String(new Date().getMonth()+1).padStart(2,"0")+"/"+String(new Date().getFullYear()+2).slice(-2),
+  cvv:String(Math.floor(100+Math.random()*900))
+},
+savingsBalance:0,
+savingsLockedUntil:null,
+uid:user.uid,
+
+nom:value("nom"),
+prenom:value("prenom"),
+dateNaissance:value("dateNaissance"),
+nationalite:value("nationalite"),
+sexe:value("sexe"),
+
+email:email,
+telephone:value("telephone"),
+
+continent:value("continent"),
+pays:value("pays"),
+devise:value("devise"),
+
+ville:value("ville"),
+adresse:value("adresse"),
+
+profession:value("profession"),
+revenus:Number(value("revenus"))||0,
+
+documentType:value("documentType"),
+documentNumber:value("documentNumber"),
+expiration:value("expiration"),
+
+accountNumber:accountNumber,
+
+balance:0,
+
+status:"Actif",
+
+createdAt:serverTimestamp()
+
+};
+
+
+/* FIRESTORE */
+
+await setDoc(
+doc(db,"users",user.uid),
+account
+);
+
+
+/* SUCCES */
+
+button.innerHTML="Compte créé ✓";
+
+$("successBox").style.display="block";
+
+alert(
+"Compte Sorevia  créé avec succès. Vous pouvez accéder à votre compte maintenant."
+);
+
+window.location.replace("connecter.html");
+
+
+}catch(error){
+
+console.error("ERREUR FIREBASE :",error);
+
+button.disabled=false;
+button.innerHTML="Créer mon compte ✓";
+
+
+if(error.code==="auth/email-already-in-use"){
+
+alert("Ce compte existe déjà.");
+
+}else if(error.code==="auth/invalid-email"){
+
+alert("L'adresse e-mail est invalide.");
+
+}else if(error.code==="auth/weak-password"){
+
+alert("Le mot de passe est trop faible.");
+
+}else if(error.code==="permission-denied"){
+
+alert("Firebase refuse l'écriture dans Firestore. Vérifiez les règles Firestore.");
+
+}else{
+
+alert(
+"Impossible de créer le compte.\n\n"+
+(error.message||"Erreur inconnue.")
+);
+
+}
+
+}
+
+};
+
+showStep(1);
+
+</script>
+
+</body>
+</html>
